@@ -19,7 +19,7 @@ jobs:
 
       - name: Install MSYS2 toolchain
         if: steps.cache.outputs.cache-hit != 'true'
-        uses: msys2/setup-msys2@a3cc4d82700448fea6cb3bcfc9cbb23f916762c4
+        uses: msys2/setup-msys2@v2.5.0
         with:
           msystem: MINGW64
           update: true
