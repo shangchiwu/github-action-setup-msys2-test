@@ -10,16 +10,16 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      # - name: Search Cache for MSYS2 toolchain
-      #   uses: actions/cache@v2
-      #   id: cache
-      #   with:
-      #     path: D:\a\_temp\setup-msys2\msys64
-      #     key: ${{ runner.os }}-msys2-1 }}
+      - name: Search Cache for MSYS2 toolchain
+        uses: actions/cache@v2
+        id: cache
+        with:
+          path: D:/a/_temp/msys64
+          key: ${{ runner.os }}-msys2-2 }}
 
       - name: Install MSYS2 toolchain
         if: steps.cache.outputs.cache-hit != 'true'
-        uses: msys2/setup-msys2@v2
+        uses: msys2/setup-msys2@a3cc4d82700448fea6cb3bcfc9cbb23f916762c4
         with:
           msystem: MINGW64
           update: true
@@ -32,3 +32,4 @@ jobs:
           cmake --version
           g++ --version
           dir
+          dir D:/a/_temp
