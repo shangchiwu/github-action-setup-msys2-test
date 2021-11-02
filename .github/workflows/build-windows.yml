@@ -33,3 +33,4 @@ jobs:
           g++ --version
           dir
           dir D:/a/_temp
+          ./run
