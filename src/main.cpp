@@ -10,7 +10,7 @@ int main(int argc, const char **argv) {
     const int b = 87;
     std::cout << "b = " << b << std::endl;
 
-    const int *c = nullptr;
+    const int *c = &a;
     std::cout << "c = " << *c << std::endl; // error here
 
     return 0;
