@@ -19,6 +19,10 @@ jobs:
           where g++
           which g++
           g++ --version
+          echo $GITHUB_PATH
+          echo "C:\;" >> $GITHUB_PATH
+          echo $GITHUB_PATH
+          echo $env:Path
 
       - name: Test to add MSYS to path
         run: |
