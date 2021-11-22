@@ -54,7 +54,7 @@ jobs:
           where g++
           which g++
           g++ --version
-          ls D:/
-          ls D:/msys2
-          ls D:/msys64/mingw64/bin/g++.exe
-          D:/msys64/mingw64/bin/g++.exe --version
+          ls C:/
+          ls C:/msys64
+          ls C:/msys64/mingw64/bin/g++.exe
+          C:/msys64/mingw64/bin/g++.exe --version
