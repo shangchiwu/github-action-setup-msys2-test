@@ -1,5 +1,10 @@
 name: build-windows
-on: [pull_request]
+on:
+  # pull_request:
+  #   types: [ready_for_review]
+  push:
+    branches:
+      - master
 
 jobs:
   build:
@@ -10,27 +15,30 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Search Cache for MSYS2 toolchain
-        uses: actions/cache@v2
-        id: cache
-        with:
-          path: D:/a/_temp/msys64
-          key: ${{ runner.os }}-msys2-2 }}
+      # - name: Search Cache for MSYS2 toolchain
+      #   uses: actions/cache@v2
+      #   id: cache
+      #   with:
+      #     path: D:/a/_temp/msys64
+      #     key: ${{ runner.os }}-msys2-2 }}
 
-      - name: Install MSYS2 toolchain
-        if: steps.cache.outputs.cache-hit != 'true'
-        uses: msys2/setup-msys2@v2.5.0
-        with:
-          msystem: MINGW64
-          update: true
-          install: git mingw-w64-x86_64-toolchain
+      # - name: Install MSYS2 toolchain
+      #   if: steps.cache.outputs.cache-hit != 'true'
+      #   uses: msys2/setup-msys2@v2.5.0
+      #   with:
+      #     msystem: MINGW64
+      #     update: true
+      #     install: git mingw-w64-x86_64-toolchain
 
-      - name: CI-Build
-        run: |
-          # echo 'Running in MSYS2!'
-          echo $env:Path
-          cmake --version
-          g++ --version
-          dir
-          dir D:/a/_temp
-          ./run
+      # - name: CI-Build
+      #   run: |
+      #     # echo 'Running in MSYS2!'
+      #     echo $env:Path
+      #     cmake --version
+      #     g++ --version
+      #     dir
+      #     dir D:/a/_temp
+      #     ./run
+
+      - name: echo
+        run: echo $(git branch -avv)
