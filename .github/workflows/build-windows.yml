@@ -20,6 +20,13 @@ jobs:
           which g++
           g++ --version
 
+      - name: Add MSYS to path
+        run: |
+          $env:Path = "C:\\msys64\\mingw64\\bin;$env:Path"
+          where g++
+          which g++
+          g++ --version
+
       # - name: Search Cache for MSYS2 toolchain
       #   uses: actions/cache@v2
       #   id: cache
@@ -27,24 +34,24 @@ jobs:
       #     path: D:/a/_temp/msys64
       #     key: ${{ runner.os }}-msys2-2 }}
 
-      - name: Install MSYS2 toolchain
-        if: steps.cache.outputs.cache-hit != 'true'
-        uses: msys2/setup-msys2@v2
-        with:
-          msystem: MINGW64
-          update: true
-          install: git mingw-w64-x86_64-toolchain
-          location: D:\
+      # - name: Install MSYS2 toolchain
+      #   if: steps.cache.outputs.cache-hit != 'true'
+      #   uses: msys2/setup-msys2@v2
+      #   with:
+      #     msystem: MINGW64
+      #     update: true
+      #     install: git mingw-w64-x86_64-toolchain
+      #     location: D:\
 
-      # - name: CI-Build
-      #   run: |
-      #     # echo 'Running in MSYS2!'
-      #     echo $env:Path
-      #     cmake --version
-      #     g++ --version
-      #     dir
-      #     dir D:/a/_temp
-      #     ./run
+      - name: CI-Build
+        run: |
+          # echo 'Running in MSYS2!'
+          echo $env:Path
+          cmake --version
+          g++ --version
+          dir
+          dir D:/a/_temp
+          ./run
 
       # - name: echo
       #   run: echo $(git branch -avv)
@@ -53,7 +60,9 @@ jobs:
         run: |
           where g++
           which g++
+          echo $env:Path
           $env:Path = "C:\\msys64\\mingw64\\bin;$env:Path"
+          $env:Path
           where g++
           which g++
           g++ --version
