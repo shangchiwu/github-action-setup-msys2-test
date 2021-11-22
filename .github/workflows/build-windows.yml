@@ -45,7 +45,7 @@ jobs:
 
       - name: CI-Build
         run: |
-          # echo 'Running in MSYS2!'
+          # echo 'Running in MSYS2??'
           $env:Path = "C:\\msys64\\mingw64\\bin;$env:Path"
           echo $env:Path
           cmake --version
