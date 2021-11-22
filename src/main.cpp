@@ -1,4 +1,5 @@
 #include <iostream>
+#include <numbers>
 
 int main(int argc, const char **argv) {
 
@@ -12,6 +13,8 @@ int main(int argc, const char **argv) {
 
     const int *c = &a;
     std::cout << "c = " << *c << std::endl; // error here
+
+    std::cout << "PI = " << std::numbers::pi << std::endl;
 
     return 0;
 }

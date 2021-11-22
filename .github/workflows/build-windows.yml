@@ -1,7 +1,6 @@
 name: build-windows
 on:
-  # pull_request:
-  #   types: [ready_for_review]
+  pull_request:
   push:
     branches:
       - master
@@ -15,6 +14,23 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: test
+        run: |
+          where g++
+          which g++
+          g++ --version
+          echo $GITHUB_PATH
+          echo "C:\;" >> $GITHUB_PATH
+          echo $GITHUB_PATH
+          echo $env:Path
+
+      - name: Test to add MSYS to path
+        run: |
+          $env:Path = "C:\\msys64\\mingw64\\bin;$env:Path"
+          where g++
+          which g++
+          g++ --version
+
       # - name: Search Cache for MSYS2 toolchain
       #   uses: actions/cache@v2
       #   id: cache
@@ -24,21 +40,38 @@ jobs:
 
       # - name: Install MSYS2 toolchain
       #   if: steps.cache.outputs.cache-hit != 'true'
-      #   uses: msys2/setup-msys2@v2.5.0
+      #   uses: msys2/setup-msys2@v2
       #   with:
       #     msystem: MINGW64
       #     update: true
       #     install: git mingw-w64-x86_64-toolchain
+      #     location: D:\
 
-      # - name: CI-Build
-      #   run: |
-      #     # echo 'Running in MSYS2!'
-      #     echo $env:Path
-      #     cmake --version
-      #     g++ --version
-      #     dir
-      #     dir D:/a/_temp
-      #     ./run
+      - name: CI-Build
+        run: |
+          # echo 'Running in MSYS2??'
+          $env:Path = "C:\\msys64\\mingw64\\bin;$env:Path"
+          echo $env:Path
+          cmake --version
+          g++ --version
+          dir
+          dir D:/a/_temp
+          ./run
 
-      - name: echo
-        run: echo $(git branch -avv)
+      # - name: echo
+      #   run: echo $(git branch -avv)
+
+      - name: test
+        run: |
+          where g++
+          which g++
+          echo $env:Path
+          $env:Path = "C:\\msys64\\mingw64\\bin;$env:Path"
+          $env:Path
+          where g++
+          which g++
+          g++ --version
+          ls C:/
+          ls C:/msys64
+          ls C:/msys64/mingw64/bin/g++.exe
+          C:/msys64/mingw64/bin/g++.exe --version
