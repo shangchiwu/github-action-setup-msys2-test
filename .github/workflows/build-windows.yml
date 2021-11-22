@@ -53,6 +53,9 @@ jobs:
         run: |
           where g++
           which g++
+          $env:Path = "C:\\msys64\\mingw64\\bin;$env:Path"
+          where g++
+          which g++
           g++ --version
           ls C:/
           ls C:/msys64
