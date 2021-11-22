@@ -1,7 +1,10 @@
 name: build-windows
 on:
-  pull_request:
-    types: [ready_for_review]
+  # pull_request:
+  #   types: [ready_for_review]
+  push:
+    branches:
+      - master
 
 jobs:
   build:
