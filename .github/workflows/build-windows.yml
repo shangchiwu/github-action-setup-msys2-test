@@ -20,7 +20,7 @@ jobs:
           which g++
           g++ --version
 
-      - name: Add MSYS to path
+      - name: Test to add MSYS to path
         run: |
           $env:Path = "C:\\msys64\\mingw64\\bin;$env:Path"
           where g++
@@ -46,6 +46,7 @@ jobs:
       - name: CI-Build
         run: |
           # echo 'Running in MSYS2!'
+          $env:Path = "C:\\msys64\\mingw64\\bin;$env:Path"
           echo $env:Path
           cmake --version
           g++ --version
