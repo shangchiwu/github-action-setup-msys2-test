@@ -34,6 +34,7 @@ jobs:
           msystem: MINGW64
           update: true
           install: git mingw-w64-x86_64-toolchain
+          location: D:\
 
       # - name: CI-Build
       #   run: |
@@ -53,3 +54,7 @@ jobs:
           where g++
           which g++
           g++ --version
+          ls D:/
+          ls D:/msys2
+          ls D:/msys64/mingw64/bin/g++.exe
+          D:/msys64/mingw64/bin/g++.exe --version
