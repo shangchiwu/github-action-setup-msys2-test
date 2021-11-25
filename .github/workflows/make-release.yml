@@ -7,7 +7,7 @@ on:
 
 jobs:
 
-  release_pre:
+  build:
     runs-on: windows-2019
     # needs: build
     steps:
