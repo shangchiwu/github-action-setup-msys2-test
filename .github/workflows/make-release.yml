@@ -6,7 +6,10 @@ on:
       # - "v*"
 
 jobs:
-  build:
+  release-build:
+    runs-on: windows-2019
+    stpes:
+      - run: echo "hello"
 
   release:
     runs-on: windows-2019
