@@ -7,13 +7,16 @@ on:
 
 jobs:
   build:
+    uses: shangchiwu/github-action-setup-msys2-test/.github/workflows/build-windows.yml@master
+
+  release:
     runs-on: windows-2019
+    needs: build
     steps:
       - name: Checkout
         uses: actions/checkout@v2
 
       - name: call build
-        uses: shangchiwu/github-action-setup-msys2-test/.github/workflows/build-windows.yml@master
 
       - name: Build
         run: echo ${{ github.sha }} > Release.txt
