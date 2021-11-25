@@ -6,21 +6,21 @@ on:
       # - "v*"
 
 jobs:
-  release-build:
-    runs-on: windows-2019
-    stpes:
-      - name: Checkout
-        uses: actions/checkout@v2
-
-      - name: Test
-        run: echo "hello"
-
-  # release:
+  # release-build:
   #   runs-on: windows-2019
-  #   # needs: build
-  #   steps:
+  #   stpes:
   #     - name: Checkout
   #       uses: actions/checkout@v2
+
+  #     - name: Test
+  #       run: echo "hello"
+
+  release:
+    runs-on: windows-2019
+    # needs: build
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
 
   # #     - name: call build
 
