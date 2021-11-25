@@ -25,10 +25,10 @@ jobs:
   #     - name: Test
   #       run: cat Release.txt
 
-  #     - name: Release
-  #       uses: softprops/action-gh-release@v1
-  #       with:
-  #         files: |
-  #           Release.txt
-  #           build/bin/hello.exe
-  #         generate_release_notes: true
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            Release.txt
+            build/bin/hello.exe
+          generate_release_notes: true
