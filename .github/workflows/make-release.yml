@@ -9,6 +9,8 @@ jobs:
 
   build:
     uses: shangchiwu/github-action-setup-msys2-test/.github/workflows/build-windows.yml@master
+      with:
+        artifact-name: release-build
 
   release:
     runs-on: windows-2019

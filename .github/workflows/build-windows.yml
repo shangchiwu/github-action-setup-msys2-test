@@ -65,10 +65,10 @@ jobs:
           ./run
 
       - uses: actions/upload-artifact@v2
-        if: ${{ input.artifact-name != null }}
+        if: ${{ input && input.artifact-name != null }}
         with:
           name: ${{ inputs.artifact-name }}
-          path: path/to/artifact/world.txt
+          path: build/bin
 
       # - name: echo
       #   run: echo $(git branch -avv)
