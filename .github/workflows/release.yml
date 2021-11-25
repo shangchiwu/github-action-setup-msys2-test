@@ -12,6 +12,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
+      - use: ./.github/workflows/build-windows.yml
+
       - name: Build
         run: echo ${{ github.sha }} > Release.txt
 
@@ -21,5 +23,7 @@ jobs:
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
-          files: Release.txt
+          files: |
+            Release.txt
+            build/bin/hello.exe
           generate_release_notes: true
