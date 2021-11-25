@@ -8,7 +8,7 @@ on:
 jobs:
 
   build:
-    uses: shangchiwu/github-action-setup-msys2-test/.github/workflows/build-windows.yml@b6bac040577fa89811bf7b657ce93d37576eb8f4
+    uses: shangchiwu/github-action-setup-msys2-test/.github/workflows/build-windows.yml@master
 
   release:
     runs-on: windows-2019
