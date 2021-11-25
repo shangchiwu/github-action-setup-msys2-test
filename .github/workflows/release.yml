@@ -12,7 +12,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - uses: ./.github/workflows/build-windows.yml@master
+      - uses: ./.github/workflows/build-windows.yml@${{ github.sha }}
 
       - name: Build
         run: echo ${{ github.sha }} > Release.txt
