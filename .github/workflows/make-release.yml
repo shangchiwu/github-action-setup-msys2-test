@@ -1,15 +1,11 @@
 name: make-release
 
 on:
-  pull_request:
   push:
-    branches:
-      - auto-release
     # tags:
       # - "v*"
 
 jobs:
-  # build:
   release:
     runs-on: windows-2019
     # needs: build
