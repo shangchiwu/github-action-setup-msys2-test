@@ -14,22 +14,22 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: test
-        run: |
-          where g++
-          which g++
-          g++ --version
-          echo $GITHUB_PATH
-          echo "C:\;" >> $GITHUB_PATH
-          echo $GITHUB_PATH
-          echo $env:Path
+      # - name: test
+      #   run: |
+      #     where g++
+      #     which g++
+      #     g++ --version
+      #     echo $GITHUB_PATH
+      #     echo "C:\;" >> $GITHUB_PATH
+      #     echo $GITHUB_PATH
+      #     echo $env:Path
 
-      - name: Test to add MSYS to path
-        run: |
-          $env:Path = "C:\\msys64\\mingw64\\bin;$env:Path"
-          where g++
-          which g++
-          g++ --version
+      # - name: Test to add MSYS to path
+      #   run: |
+      #     $env:Path = "C:\\msys64\\mingw64\\bin;$env:Path"
+      #     where g++
+      #     which g++
+      #     g++ --version
 
       # - name: Search Cache for MSYS2 toolchain
       #   uses: actions/cache@v2
@@ -61,17 +61,17 @@ jobs:
       # - name: echo
       #   run: echo $(git branch -avv)
 
-      - name: test
-        run: |
-          where g++
-          which g++
-          echo $env:Path
-          $env:Path = "C:\\msys64\\mingw64\\bin;$env:Path"
-          $env:Path
-          where g++
-          which g++
-          g++ --version
-          ls C:/
-          ls C:/msys64
-          ls C:/msys64/mingw64/bin/g++.exe
-          C:/msys64/mingw64/bin/g++.exe --version
+      # - name: test
+      #   run: |
+      #     where g++
+      #     which g++
+      #     echo $env:Path
+      #     $env:Path = "C:\\msys64\\mingw64\\bin;$env:Path"
+      #     $env:Path
+      #     where g++
+      #     which g++
+      #     g++ --version
+      #     ls C:/
+      #     ls C:/msys64
+      #     ls C:/msys64/mingw64/bin/g++.exe
+      #     C:/msys64/mingw64/bin/g++.exe --version
