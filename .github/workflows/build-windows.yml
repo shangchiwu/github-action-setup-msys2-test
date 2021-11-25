@@ -65,7 +65,7 @@ jobs:
           ./run
 
       - uses: actions/upload-artifact@v2
-        if: ${{ input && input.artifact-name != null }}
+        if: ${{ input != null && input.artifact-name != null }}
         with:
           name: ${{ inputs.artifact-name }}
           path: build/bin
