@@ -1,6 +1,7 @@
 name: make-release
 
 on:
+  pull_request:
   push:
     branch:
       - '*'
