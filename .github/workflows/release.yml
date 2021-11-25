@@ -12,7 +12,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - uses: ./.github/workflows/build-windows.yml@${{ github.sha }}
+      # - uses: ./.github/workflows/build-windows.yml@
 
       - name: Build
         run: echo ${{ github.sha }} > Release.txt
@@ -20,7 +20,7 @@ jobs:
       - name: Test
         run: cat Release.txt
 
-      - name: Release
+      - name: Release${{ github.sha }}
         uses: softprops/action-gh-release@v1
         with:
           files: |
