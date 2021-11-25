@@ -8,11 +8,7 @@ on:
 jobs:
 
   build:
-    runs-on: windows-2019
-    # needs: build
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+    uses: shangchiwu/github-action-setup-msys2-test/.github/workflows/build-windows.yml@auto-release
 
   release:
     runs-on: windows-2019
