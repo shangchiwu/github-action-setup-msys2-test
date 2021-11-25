@@ -31,6 +31,12 @@ jobs:
         run: |
           ls
 
+      - uses: actions/download-artifact@v2
+        # if: ${{ input != null && input.artifact-name != null }}
+        with:
+          name: build-binary
+          path: build/bin
+
       - name: Release
         uses: softprops/action-gh-release@v1
         with:

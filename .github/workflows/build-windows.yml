@@ -5,9 +5,9 @@ on:
     branches:
       - master
   workflow_call:
-    inputs:
-      artifact-name:
-        type: string
+    # inputs:
+    #   artifact-name:
+    #     type: string
 
 
 
@@ -65,9 +65,9 @@ jobs:
           ./run
 
       - uses: actions/upload-artifact@v2
-        if: ${{ input != null && input.artifact-name != null }}
+        # if: ${{ input != null && input.artifact-name != null }}
         with:
-          name: ${{ inputs.artifact-name }}
+          name: build-binary
           path: build/bin
 
       # - name: echo
