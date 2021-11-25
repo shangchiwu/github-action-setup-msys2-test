@@ -1,7 +1,7 @@
 name: release
 
 on:
-  [push]
+  push:
     # tags:
       # - "v*"
 
@@ -9,25 +9,25 @@ jobs:
   build:
     uses: shangchiwu/g0ithub-action-setup-msys2-test/.github/workflows/build-windows.yml@auto-release
 
-  release:
-    runs-on: windows-2019
-    needs: build
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+  # release:
+  #   runs-on: windows-2019
+  #   needs: build
+  #   steps:
+  #     - name: Checkout
+  #       uses: actions/checkout@v2
 
-      - name: call build
+  #     - name: call build
 
-      - name: Build
-        run: echo ${{ github.sha }} > Release.txt
+  #     - name: Build
+  #       run: echo ${{ github.sha }} > Release.txt
 
-      - name: Test
-        run: cat Release.txt
+  #     - name: Test
+  #       run: cat Release.txt
 
-      - name: Release
-        uses: softprops/action-gh-release@v1
-        with:
-          files: |
-            Release.txt
-            build/bin/hello.exe
-          generate_release_notes: true
+  #     - name: Release
+  #       uses: softprops/action-gh-release@v1
+  #       with:
+  #         files: |
+  #           Release.txt
+  #           build/bin/hello.exe
+  #         generate_release_notes: true
