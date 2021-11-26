@@ -1,0 +1,6 @@
+name: 'Build'
+description: 'Build binaries'
+runs:
+  using: 'composite'
+  steps:
+    - run: './run'
