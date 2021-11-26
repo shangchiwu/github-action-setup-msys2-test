@@ -1,10 +1,10 @@
 name: build-windows
 on:
-  pull_request:
-  push:
-    branches:
-      - master
-  workflow_call:
+  # pull_request:
+  # push:
+  #   branches:
+  #     - master
+  # workflow_call:
     # inputs:
     #   artifact-name:
     #     type: string
