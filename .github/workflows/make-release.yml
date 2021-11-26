@@ -37,9 +37,13 @@ jobs:
           path: build/bin
 
       - name: Release
-        uses: softprops/action-gh-release@v1
-        with:
-          files: |
-            Release.txt
-            build/bin/hello.exe
-          generate_release_notes: true
+        # uses: softprops/action-gh-release@v1
+        # with:
+        #   files: |
+        #     Release.txt
+        #     build/bin/hello.exe
+        #   generate_release_notes: true
+        run: |
+          echo RELEASE!!!
+          ls build/bin
+          ./build/bin/hello.exe
