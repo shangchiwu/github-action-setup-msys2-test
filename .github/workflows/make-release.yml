@@ -8,7 +8,7 @@ on:
 jobs:
 
   build:
-    uses: .github/workflows/build-windows.yml@better-auto-release
+    uses: ./.github/workflows/build-windows.yml@better-auto-release
     # uses: shangchiwu/github-action-setup-msys2-test/.github/workflows/build-windows.yml@better-auto-release
 
   release:
