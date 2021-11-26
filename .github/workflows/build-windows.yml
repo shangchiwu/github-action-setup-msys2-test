@@ -63,6 +63,7 @@ jobs:
           dir
           dir D:/a/_temp
           ./run
+          ls build/bin
 
       - uses: actions/upload-artifact@v2
         # if: ${{ input != null && input.artifact-name != null }}
