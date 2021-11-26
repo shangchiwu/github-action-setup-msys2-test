@@ -1,6 +1,7 @@
-name: 'Build'
-description: 'Build binaries'
+name: Build
+description: Build binaries
 runs:
-  using: 'composite'
+  using: composite
   steps:
-    - run: './run'
+    - run: ./run
+      shell: pwsh
