@@ -8,7 +8,7 @@ on:
 jobs:
 
   build:
-    uses: ./.github/actions/build-windows.yml@better-auto-release
+    uses: ./.github/actions/build.yml@better-auto-release
 
   release:
     runs-on: windows-2019
