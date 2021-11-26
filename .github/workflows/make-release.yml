@@ -26,8 +26,8 @@ jobs:
   #       run: cat Release.txt
 
       - name: Check
-        # echo ${{ github.repository }}/.github/workflows/build-windows.yml@auto-release
         run: |
+          echo ${{ github.repository }}/.github/workflows/build-windows.yml@better-auto-release
           ls
 
       - uses: actions/download-artifact@v2
