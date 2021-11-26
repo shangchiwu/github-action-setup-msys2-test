@@ -16,7 +16,7 @@ jobs:
         run: cat .github/actions/build/action.yml
 
       - name: Building
-        uses: ./.github/actions/build@${{github.sha}}
+        uses: ./.github/actions/build@better-auto-release
 
       - uses: actions/upload-artifact@v2
         with:
