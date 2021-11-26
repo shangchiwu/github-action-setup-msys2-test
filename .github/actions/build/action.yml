@@ -4,9 +4,9 @@ runs:
   using: composite
   steps:
     - name: Add MSYS toolchain to path
-      run: echo C:\\msys64\\mingw64\\bin >> $GITHUB_PATH
-      shell: pwsh
+      shell: bash
+      run: echo "C:\\msys64\\mingw64\\bin" >> $GITHUB_PATH
 
     - name: Run build.bat
-      run: ./build.bat
       shell: pwsh
+      run: ./build.bat
