@@ -3,5 +3,10 @@ description: Build binaries
 runs:
   using: composite
   steps:
-    - run: ./run
+    - name: Add MSYS toolchain to path
+      run: echo C:\\msys64\\mingw64\\bin >> $GITHUB_PATH
+      shell: pwsh
+
+    - name: Run build.bat
+      run: ./build.bat
       shell: pwsh
