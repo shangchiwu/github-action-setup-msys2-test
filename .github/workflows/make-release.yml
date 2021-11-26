@@ -1,0 +1,44 @@
+name: make-release
+
+on:
+  push:
+    # tags:
+      # - "v*"
+
+jobs:
+
+  build:
+    uses: shangchiwu/github-action-setup-msys2-test/.github/workflows/build-windows.yml@auto-release
+
+  release:
+    runs-on: windows-2019
+    needs: build
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+  # #     - name: call build
+
+  #     - name: Build
+  #       run: echo ${{ github.sha }} > Release.txt
+
+  #     - name: Test
+  #       run: cat Release.txt
+
+      - name: Check
+        run: |
+          ls
+
+      - uses: actions/download-artifact@v2
+        # if: ${{ input != null && input.artifact-name != null }}
+        with:
+          name: build-binary
+          path: build/bin
+
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            Release.txt
+            build/bin/hello.exe
+          generate_release_notes: true
