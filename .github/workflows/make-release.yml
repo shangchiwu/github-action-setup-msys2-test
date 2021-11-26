@@ -8,7 +8,7 @@ on:
 jobs:
 
   build:
-    uses: ${{ github.repository }}/.github/workflows/build-windows.yml@auto-release
+    uses: shangchiwu/github-action-setup-msys2-test/.github/workflows/build-windows.yml@auto-release
 
   release:
     runs-on: windows-2019
@@ -27,6 +27,7 @@ jobs:
 
       - name: Check
         run: |
+          echo ${{ github.repository }}/.github/workflows/build-windows.yml@auto-release
           ls
 
       - uses: actions/download-artifact@v2
