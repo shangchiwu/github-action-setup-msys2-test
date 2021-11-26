@@ -6,7 +6,6 @@ on:
       # - "v*"
 
 jobs:
-
   build:
     runs-on: windows-2019
     steps:
@@ -17,7 +16,7 @@ jobs:
         run: ls .github/actions/build
 
       - name: Building
-        uses: ./.github/actions/build@better-auto-release
+        uses: ./.github/actions/build@${{github.sha}}
 
       - uses: actions/upload-artifact@v2
         with:
