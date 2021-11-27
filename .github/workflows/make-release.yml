@@ -3,7 +3,7 @@ name: make-release
 on:
   push:
     tags:
-      - "v*"
+      - v*
 
 jobs:
   build:
@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Building
-        uses: .github/actions/build
+        uses: ./.github/actions/build
 
       - uses: actions/upload-artifact@v2
         with:
