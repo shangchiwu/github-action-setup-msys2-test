@@ -2,8 +2,8 @@ name: make-release
 
 on:
   push:
-    # tags:
-      # - "v*"
+    tags:
+      - "v*"
 
 jobs:
   build:
@@ -12,11 +12,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: ls
-        run: cat .github/actions/build/action.yml
-
       - name: Building
-        uses: ./.github/actions/build
+        uses: .github/actions/build
 
       - uses: actions/upload-artifact@v2
         with:
